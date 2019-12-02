@@ -1,0 +1,9 @@
+.idea
+.vscode/
+.project
+.settings
+.DS_Store
+*.log
+tags
+tags.lock
+node_modules/
