@@ -1,0 +1,31 @@
+{
+  "name": "stream-chunker",
+  "version": "1.1.1",
+  "description": "A node transform stream that splits data on a given seperator into chunks",
+  "main": "streamChunker.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "verbose": true,
+    "testEnvironment": "node"
+  },
+  "author": "hello@creativecreature.com",
+  "license": "ISC",
+  "website": "https://github.com/CharlesConner/stream-chunker",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CharlesConner/stream-chunker.git"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-jest": "^22.7.2",
+    "eslint-plugin-node": "^9.2.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "jest": "^24.9.0"
+  }
+}
