@@ -4,6 +4,10 @@ This module implements the Node transform stream interface. It is used to transf
 a given stream into a chunk size of your choosing.
 
 
+## Installing
+To install it simply run `npm install bufferedsplitter` in a terminal.
+
+
 ## Options
 The BufferedSplitter constructor takes three arguments. The chunkSize(number), the seperator(string)
 and an optional encoding(string, defaults to 'utf-8').
