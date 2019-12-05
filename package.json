@@ -17,6 +17,16 @@
     "type": "git",
     "url": "https://github.com/CharlesConner/bufferedsplitter.git"
   },
+  "keywords": [
+    "node",
+    "streams",
+    "nodestream",
+    "transformstream",
+    "chunks",
+    "chunkstream",
+    "transformchunk",
+    "streambuffer"
+  ],
   "devDependencies": {
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^6.0.0",
