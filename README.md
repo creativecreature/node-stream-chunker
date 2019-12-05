@@ -10,7 +10,7 @@ To install it simply run `npm install bufferedsplitter` in a terminal.
 
 ## Options
 The BufferedSplitter constructor takes three arguments. The chunkSize(number), the seperator(string)
-and an optional encoding(string, defaults to 'utf-8').
+and an optional defaultEncoding(string, defaults to 'utf-8').
 
 
 ## Usage
