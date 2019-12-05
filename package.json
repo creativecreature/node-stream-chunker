@@ -25,7 +25,15 @@
     "chunks",
     "chunkstream",
     "transformchunk",
-    "streambuffer"
+    "delimiter",
+    "delimiterstream",
+    "separator",
+    "separatorstream",
+    "streambuffer",
+    "stream",
+    "splitstream",
+    "newlinestream",
+    "chunk"
   ],
   "devDependencies": {
     "eslint": "^5.16.0",

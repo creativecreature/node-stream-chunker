@@ -1,10 +1,10 @@
 const { Transform } = require('stream');
 
 class BufferedSplitter extends Transform {
-  constructor(chunkSize, separator, defaultEncoding = 'utf-8') {
+  constructor(chunkSize, delimiter, defaultEncoding = 'utf-8') {
     super({ defaultEncoding });
     this.chunkSize = chunkSize;
-    this.separator = Buffer.from(separator);
+    this.delimiter = Buffer.from(delimiter);
     this.data = Buffer.from([]);
     this.leftovers = Buffer.from([]);
     this.count = 0;
@@ -16,14 +16,14 @@ class BufferedSplitter extends Transform {
     let searchIndex = 0;
     let hasMoreSeparators = true;
     while (searchIndex < currentBuffer.length && hasMoreSeparators) {
-      const separatorIndex = currentBuffer.indexOf(this.separator, searchIndex, encoding);
-      if (separatorIndex !== -1) {
+      const delimiterIndex = currentBuffer.indexOf(this.delimiter, searchIndex, encoding);
+      if (delimiterIndex !== -1) {
         this.data = Buffer.concat([
           this.data,
-          currentBuffer.slice(searchIndex, separatorIndex + this.separator.length)
+          currentBuffer.slice(searchIndex, delimiterIndex + this.delimiter.length)
         ]);
         this.count++;
-        searchIndex = separatorIndex + this.separator.length;
+        searchIndex = delimiterIndex + this.delimiter.length;
         if (this.count === this.chunkSize) {
           this.push(this.data);
           this.data = Buffer.from([]);
