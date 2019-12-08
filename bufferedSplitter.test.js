@@ -187,4 +187,32 @@ describe('BufferedSplitter', () => {
       })
     );
   });
+
+  test('handles cases where the data is smaller than the chunk size', async () => {
+    const delimiter = ' ';
+    const testString = `test${delimiter}`;
+    const numWrites = 4;
+    const chunkSize = 10;
+    const expectedNumberOfChunks = Math.ceil(numWrites / chunkSize);
+    const records = [];
+    const readStream = createReadStream();
+    const splitter = new BufferedSplitter(chunkSize, delimiter);
+    const waitForStream = () =>
+      new Promise((resolve, reject) => {
+        readStream
+          .pipe(splitter)
+          .on('data', d => records.push(d))
+          .on('error', reject)
+          .on('finish', resolve);
+      });
+    for (let i = 0; i < numWrites; i++) {
+      readStream.push(testString);
+    }
+    readStream.push(null);
+    await waitForStream();
+    expect(records.length).toBe(expectedNumberOfChunks);
+    expect(records.map(r => r.toString())).toEqual(
+      [...new Array(expectedNumberOfChunks)].map(() => testString.repeat(numWrites))
+    );
+  })
 });
