@@ -2,7 +2,7 @@
 This module implements the Node transform stream interface. It keeps an internal
 buffer of a given size, and will spit out a chunk each time it fills up.
 
-If you want to split a large files into chunks, based on a delimiter, you would
+If you want to split a large file into chunks, based on a delimiter, you would
 basically do this:
 
 ``` javascript
